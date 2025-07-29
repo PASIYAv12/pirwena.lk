@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>මාතර මහා පිරිවෙන</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Serif+Sinhala&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  font-family: 'Noto Serif Sinhala', serif;
+  background: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
+  color: #2f2f2f;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease-in;
+}
+
+header {
+  background: #8d6748;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 1s ease-out;
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc70;
+}
+
+.lang-switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.lang-switch button {
+  margin: 0 5px;
+  padding: 5px 12px;
+  border: none;
+  background-color: #fff;
+  color: #8d6748;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lang-switch button:hover {
+  background-color: #ffebc1;
+}
+
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1587474260584-136574528ed5') no-repeat center center/cover;
+  padding: 6rem 2rem;
+  border-radius: 1rem;
+  color: white;
+  animation: zoomIn 1s ease-in-out;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+footer {
+  background: #8d6748;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="lang-switch">
+      <button onclick="setLanguage('si')">සිංහල</button>
+      <button onclick="setLanguage('en')">English</button>
+    </div>
+    <h1>
+      <span class="lang si">මාතර මහා පිරිවෙන</span>
+      <span class="lang en" style="display:none;">Matara Maha Pirivena</span>
+    </h1>
+    <nav>
+      <a href="#">මුල් පිටුව</a>
+      <a href="#">ඉතිහාසය</a>
+      <a href="#">ගැලරි</a>
+      <a href="#">සම්බන්ධ වන්න</a>
+      <a href="#">Developer</a>
+    </nav>
+  </header>  <main>
+    <section class="hero">
+      <h2>
+        <span class="lang si">සාධු! සාධු! සාධු!</span>
+        <span class="lang en" style="display:none;">Sadhu! Sadhu! Sadhu!</span>
+      </h2>
+      <p>
+        <span class="lang si">පිරිවෙන් ජීවිතයේ ආලෝකමත් මඟක්...</span>
+        <span class="lang en" style="display:none;">A spiritual path through monastic life...</span>
+      </p>
+    </section>
+  </main>  <footer>
+    <p>
+      <span class="lang si">© 2025 මාතර මහා පිරිවෙන | නිර්මාණය කළේ FULSTRK</span>
+      <span class="lang en" style="display:none;">© 2025 Matara Maha Pirivena | Designed by FULSTRK</span>
+    </p>
+  </footer>  <script>
+    function setLanguage(lang) {
+      const allLangs = document.querySelectorAll('.lang');
+      allLangs.forEach(el => el.style.display = 'none');
+      const selectedLangs = document.querySelectorAll(`.lang.${lang}`);
+      selectedLangs.forEach(el => el.style.display = 'inline');
+    }
+
+    // Default language: Sinhala
+    document.addEventListener('DOMContentLoaded', () => setLanguage('si'));
+  </script></body>
+</html>
